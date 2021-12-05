@@ -16,7 +16,7 @@ func main() {
 	defer f.Close()
 
 	report := [][]rune{}
-
+	reader := bufio.NewReader(f)
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
 		report = append(report, []rune(scanner.Text()))
